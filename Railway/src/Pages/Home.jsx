@@ -48,8 +48,10 @@ const Home = () => {
         }}
       >
         <div>
-          <h1 style={{ fontSize: '3rem', marginBottom: '1rem' }}>
-            Explore the World by Train
+          <h1 style={{ fontSize: '2rem', marginBottom: '1rem' }}>
+            "Booking made so easy, it feels like the station is next door!"
+
+
           </h1>
           <p style={{ fontSize: '1.2rem', marginBottom: '2rem', maxWidth: '500px' }}>
             Trains offer a scenic and comfortable way to travel. Discover new destinations with safety and style.

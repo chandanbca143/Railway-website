@@ -8,14 +8,32 @@ const SearchResults = () => {
     // Yahan aap API call wagaira laga sakte hain
   };
 
+  // Sirf digits allow karne ke liye function
+  const handleInputChange = (e) => {
+    const value = e.target.value;
+    // Regex to allow only numbers
+    if (/^\d*$/.test(value)) {
+      setTrainInput(value);
+    }
+  };
+
   return (
-    <div style={{ maxWidth: "400px", margin: "2rem auto", padding: "1rem", border: "1px solid #ccc", borderRadius: "8px" }}>
+    <div
+      style={{
+        maxWidth: "400px",
+        margin: "2rem auto",
+        padding: "1rem",
+        border: "1px solid #ccc",
+        borderRadius: "8px"
+      }}
+    >
       <h2 style={{ textAlign: "center" }}> PNR Status 📄</h2>
       <input
         type="text"
         value={trainInput}
-        onChange={(e) => setTrainInput(e.target.value)}
-        placeholder="Enter the train number or name"
+        onChange={handleInputChange}
+        placeholder="Enter your 10-digit PNR number"
+        maxLength={10}
         style={{
           width: "100%",
           padding: "0.5rem",
