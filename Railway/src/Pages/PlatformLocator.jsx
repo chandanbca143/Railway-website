@@ -10,9 +10,9 @@ const platformLocator = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-purple-800 to-blue-400 p-6">
+    <div className="min-h-screen bg-gradient-to-r from-purple-00 to-blue-00 p-6">
       {/* Main Heading */}
-      <h1 className="text-4xl font-bold text-white text-center mb-10">
+      <h1 className="text-4xl font-bold text-blacks text-center mb-10">
         Indian Railways Services Portal
       </h1>
 
@@ -59,6 +59,8 @@ const platformLocator = () => {
                 <option value="Hajipur">Hajipur</option>
                 <option value="Gorakhpur">Gorakhpur</option>
                 <option value="Siwan">Siwan</option>
+                <option value="panipat">panipat</option>
+                <option value="sonipat">sonipat</option>
               </select>
             </div>
 

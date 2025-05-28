@@ -16,7 +16,7 @@ const TatkalReservation = () => {
   };
 
   return (
-    <div className="p-6 bg-gradient-to-r from-sky-400 to-blue-400 min-h-screen text-white">
+    <div className="p-6 bg-gradient-to-r from-sky-00 to-blue-00 min-h-screen text-black">
       <h1 className="text-3xl font-bold mb-6 text-center">Tatkal Ticket Booking</h1>
 
       {/* Booking Form */}
@@ -87,8 +87,8 @@ const TatkalReservation = () => {
           <li>Login to your IRCTC account at ixigo.com</li>
           <li>Select your travel source station and destination</li>
           <li>Choose your date of journey</li>
-          <li>Now select quota as ‘TATKAL’ and search for trains</li>
-          <li>Click on ‘BOOK NOW’ for the preferred train from the list</li>
+          <li>Now select quota as TATKAL and search for trains</li>
+          <li>Click on BOOK NOW for the preferred train from the list</li>
           <li>Fill in the passengers detail carefully like Name, Age, Gender, Seat Preference, etc.</li>
           <li>Select your Payment mode like internet banking, payment wallet, credit or debit card and pay for the ticket</li>
           <li>Print your e-ticket</li>

@@ -213,7 +213,7 @@ const TrainRoutes = () => {
             
             alt="Goa"
           />
-          <h3>Punjab From: Haryan</h3>
+          <h3>Punjab From: Haryana</h3>
         </div>
         <div className="cont">
           <img

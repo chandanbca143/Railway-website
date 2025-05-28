@@ -10,7 +10,7 @@ const searchstation = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-purple-400 to-blue-400 p-6">
+    <div className="min-h-screen bg-gradient-to-r from-purple-00 to-blue-00 p-6">
       {/* Main Heading */}
       <h1 className="text-4xl font-bold text-black text-center mb-10">
         Indian Railways Services Portal

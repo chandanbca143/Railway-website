@@ -1,48 +1,23 @@
-import React, { useState } from "react";
+import React from 'react';
 
-const SearchTrain = () => {
-  const [trainInput, setTrainInput] = useState("");
-
-  const handleCheckStatus = () => {
-    alert(`Checking status for: ${trainInput}`);
-    // Yahan aap API call wagaira laga sakte hain
-  };
-
+const SearchBar = () => {
   return (
-    <div style={{ maxWidth: "400px", margin: "2rem auto", padding: "1rem", border: "1px solid #ccc", borderRadius: "8px" }}>
-      <h2 style={{ textAlign: "center" }}>Train Running Status</h2>
-      <input
-        type="text"
-        value={trainInput}
-        onChange={(e) => setTrainInput(e.target.value)}
-        placeholder="Enter the train number or name"
-        style={{
-          width: "100%",
-          padding: "0.5rem",
-          marginTop: "1rem",
-          marginBottom: "1rem",
-          fontSize: "1rem",
-          borderRadius: "4px",
-          border: "1px solid #ccc"
-        }}
-      />
-      <button
-        onClick={handleCheckStatus}
-        style={{
-          width: "100%",
-          padding: "0.5rem",
-          backgroundColor: "#007bff",
-          color: "white",
-          border: "none",
-          borderRadius: "4px",
-          fontSize: "1rem",
-          cursor: "pointer"
-        }}
-      >
-        Check Status
-      </button>
+    <div className=" bg-gradient-to-br from-blue-100 to-purple-200 flex items-center justify-center p-5 m-5">
+      <div className="backdrop-blur-md bg-white/60 p-6 rounded-2xl shadow-xl flex flex-col items-center gap-4 w-full max-w-5xl">
+        <h2 className="text-2xl font-semibold text-gray-700">Search by train name</h2>
+        <div className="flex w-full gap-3">
+          <input
+            type="text"
+            placeholder="Type here..."
+            className="flex-1 px-5 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-400 transition-all text-lg"
+          />
+          <button className="px-7 py-3 bg-purple-600 text-white text-lg rounded-xl shadow-lg hover:shadow-xl hover:bg-purple-700 transition-all">
+            Search
+          </button>
+        </div>
+      </div>
     </div>
   );
 };
 
-export default SearchTrain;
+export default SearchBar;
