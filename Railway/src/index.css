@@ -1,1 +1,7 @@
 @import "tailwindcss";
+/* Reset body defaults */
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}

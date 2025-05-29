@@ -8,7 +8,7 @@ exports.createTrain = async (req, res) => {
     res.status(201).json(train);
   } catch (err) {
     res.status(400).json({ message: err.message });
-  }
+    }
 };
 
 // Update Train (Admin Only)

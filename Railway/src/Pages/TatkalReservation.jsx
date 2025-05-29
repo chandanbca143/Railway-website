@@ -16,11 +16,13 @@ const TatkalReservation = () => {
   };
 
   return (
-    <div className="p-6 bg-gradient-to-r from-sky-00 to-blue-00 min-h-screen text-black">
-      <h1 className="text-3xl font-bold mb-6 text-center">Tatkal Ticket Booking</h1>
+    <div className="min-h-screen bg-gradient-to-r from-sky-00 to-blue-00 text-black flex flex-col justify-start items-center py-10">
+      <h1 className="text-3xl font-bold mb-6 text-center">
+        Tatkal Ticket Booking
+      </h1>
 
       {/* Booking Form */}
-      <div className="bg-white text-black p-6 rounded-lg mb-10 max-w-4xl mx-auto shadow-md">
+      <div className="bg-white text-black p-6 rounded-lg mb-10 max-w-4xl w-full shadow-md">
         <div className="flex flex-wrap gap-4 justify-center items-end">
           <div>
             <label className="block font-medium mb-1">From</label>
@@ -78,10 +80,15 @@ const TatkalReservation = () => {
       </div>
 
       {/* Informational Content */}
-      <div className="bg-white text-black p-6 rounded-lg max-w-8xl mx-auto shadow-md">
-        <h2 className="text-2xl font-bold mb-4">Book Tatkal Train Tickets Online</h2>
+      <div className="bg-white text-black p-6 rounded-lg max-w-6xl w-full shadow-md">
+        <h2 className="text-2xl font-bold mb-4">
+          Book Tatkal Train Tickets Online
+        </h2>
         <p className="mb-4">
-          You can book a maximum of only 4 passengers per PNR. Book tickets through your IRCTC login ID online on ixigo. Check for tatkal quota seat availability for your train and ticket confirmation probability/prediction.
+          You can book a maximum of only 4 passengers per PNR. Book tickets
+          through your IRCTC login ID online on ixigo. Check for tatkal quota
+          seat availability for your train and ticket confirmation
+          probability/prediction.
         </p>
         <ul className="list-disc list-inside mb-4 space-y-1">
           <li>Login to your IRCTC account at ixigo.com</li>
@@ -89,19 +96,35 @@ const TatkalReservation = () => {
           <li>Choose your date of journey</li>
           <li>Now select quota as TATKAL and search for trains</li>
           <li>Click on BOOK NOW for the preferred train from the list</li>
-          <li>Fill in the passengers detail carefully like Name, Age, Gender, Seat Preference, etc.</li>
-          <li>Select your Payment mode like internet banking, payment wallet, credit or debit card and pay for the ticket</li>
+          <li>
+            Fill in the passengers detail carefully like Name, Age, Gender,
+            Seat Preference, etc.
+          </li>
+          <li>
+            Select your Payment mode like internet banking, payment wallet,
+            credit or debit card and pay for the ticket
+          </li>
           <li>Print your e-ticket</li>
         </ul>
         <p className="mb-4">
-          Tatkal ticket booking is available on payment of an extra charge on a first-come-first-served basis for all but first AC seats. Tatkal booking is available for all class like 3A, 2A, 1A, sleeper and chair car. Tickets are issued for actual distance of travel, subject to the distance restriction applicable to the train. Once you have booked your tickets, you can check your <span className="text-red-500">PNR status</span>.
+          Tatkal ticket booking is available on payment of an extra charge on a
+          first-come-first-served basis for all but first AC seats. Tatkal
+          booking is available for all class like 3A, 2A, 1A, sleeper and chair
+          car. Tickets are issued for actual distance of travel, subject to the
+          distance restriction applicable to the train. Once you have booked
+          your tickets, you can check your{" "}
+          <span className="text-red-500">PNR status</span>.
         </p>
         <p className="mb-6">
-          Click here for normal <span className="text-red-500">train ticket booking</span>.
+          Click here for normal{" "}
+          <span className="text-red-500">Train ticket booking</span>.
         </p>
-        <h3 className="text-xl font-semibold mb-2">Book Tatkal Tickets on Mobile App</h3>
+        <h3 className="text-xl font-semibold mb-2">
+          Book Tatkal Tickets on Mobile App
+        </h3>
         <p>
-          Get Free cancellation on Tatkal tickets when you book them through our <span className="text-red-500">train mobile app</span>.
+          Get Free cancellation on Tatkal tickets when you book them through
+          our <span className="text-red-500">train mobile app</span>.
         </p>
       </div>
     </div>
