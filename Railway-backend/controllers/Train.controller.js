@@ -1,52 +1,24 @@
-const Train = require("../modles/Train");
+const Train = require("../models/Train");
 
-// Create Train (Admin Only)
-exports.createTrain = async (req, res) => {
+exports.addTrain = async (req, res) => {
   try {
-    const train = new Train(req.body);
-    await train.save();
-    res.status(201).json(train);
-  } catch (err) {
-    res.status(400).json({ message: err.message });
+    const data = req.body;
+    console.log("Incoming Data:", data);
+
+    if (Array.isArray(data)) {
+      if (data.length === 0) {
+        return res.status(400).json({ error: "Empty array provided" });
+      }
+      const trains = await Train.insertMany(data);
+      return res.status(201).json({ message: "Multiple trains added", trains });
+    } else {
+      const train = new Train(data);
+      await train.save();
+      return res.status(201).json({ message: "Train added", train });
     }
-};
 
-// Update Train (Admin Only)
-exports.updateTrain = async (req, res) => {
-  try {
-    const train = await Train.findByIdAndUpdate(req.params.id, req.body, { new: true });
-    if (!train) return res.status(404).json({ message: "Train not found" });
-    res.json(train);
-  } catch (err) {
-    res.status(400).json({ message: err.message });
-  }
-};
-
-// Delete Train (Admin Only)
-exports.deleteTrain = async (req, res) => {
-  try {
-    const train = await Train.findByIdAndDelete(req.params.id);
-    if (!train) return res.status(404).json({ message: "Train not found" });
-    res.json({ message: "Train deleted" });
-  } catch (err) {
-    res.status(400).json({ message: err.message });
-  }
-};
-
-// Get Trains (by source, destination, and date)
-exports.getTrains = async (req, res) => {
-  try {
-    const { source, destination } = req.query;
-    const now = new Date();
-
-    const trains = await Train.find({
-      source,
-      destination,
-      departureTime: { $gte: new Date(now.getTime() - 1000 * 60 * 60 * 24) }, // last 24 hrs only
-    }).sort({ departureTime: 1 });
-
-    res.json(trains);
-  } catch (err) {
-    res.status(400).json({ message: err.message });
+  } catch (error) {
+    console.error("Error:", error);
+    res.status(500).json({ error: "Failed to add train(s)", details: error.message });
   }
 };

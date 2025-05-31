@@ -1,32 +1,19 @@
-require('dotenv').config();
-
 const express = require("express");
-const dotenv = require("dotenv");
-const connectDB = require("./config/db");
-// const { corsOptions } = require("./config/frontCors");
-const trainRoutes = require("./Routes/trainRoutes");
-const deleteExpiredTrains = require("./utils/deleteExpiredTrains");
-
-// const cors = require('cors');
-const path = require("path");
-
-dotenv.config();
-connectDB();
-deleteExpiredTrains();
+const mongoose = require("mongoose");
+const trainRoutes = require("./routes/trainRoutes");
 
 const app = express();
-
 app.use(express.json());
-// app.use(cors(corsOptions));
 
-// ✅ Serve static files
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+mongoose.connect("mongodb://localhost:27017/railway", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+.then(() => console.log("✅ Connected to MongoDB"))
+.catch(err => console.error("❌ MongoDB error:", err));
 
-// Routes
-app.use("/api/auth", require("./Routes/user.route"));
 app.use("/api/trains", trainRoutes);
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
+app.listen(5000, () => {
+  console.log("🚀 Server running on http://localhost:5000");
 });
